@@ -210,7 +210,6 @@ if selected2 == "Map":
 if selected2 == "KPIs":
     opcion = st.sidebar.selectbox('Escoge la sección', ['¿La fuente es sustentable?', 'Distribucion de marcas y modelos', 'Distribución de condados'])
     if opcion == "¿La fuente es sustentable?":
-        @st.cache_resource
         def compute_sunburst():
             fig = go.Figure()
             df_all_trees = pd.DataFrame()
