@@ -211,12 +211,10 @@ if selected2 == "KPIs":
         @st.cache
         def compute_sunburst():
           fig = go.Figure()
-
-          for elec_value in df['elec'].unique():
-            filtered_df = df[df['elec'] == elec_value]
+          for elec_value in df3['elec'].unique():
+            filtered_df = df3[df3['elec'] == elec_value]
             sunburst_fig = px.sunburst(filtered_df, path=['elec', 'clean', 'Make'], color='clean', color_discrete_sequence=px.colors.qualitative.Set1)
             fig.add_trace(sunburst_fig.data[0])
-
             fig.update_layout({
                 'plot_bgcolor': 'rgba(0, 0, 0, 0)',
                 'paper_bgcolor': 'rgba(0, 0, 0, 0)',
