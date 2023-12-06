@@ -121,7 +121,7 @@ if selected2 == "Home":
   st.markdown('<p style="font-family: \'Times New Roman\'; font-size: 18px; color: black;"> La producción de carros eléctricos ha aumentado, pero esto no necesariamente representa una mejora para el medio ambiente .</p>', unsafe_allow_html=True)
   st.image("UK.png")
 
-  @st.cache_data
+  
   def compute_Sankey_chart():
       # Extract unique values
       elec_values = df['elec'].unique()
@@ -205,7 +205,6 @@ if selected2 == "Map":
 if selected2 == "KPIs":
     opcion = st.sidebar.selectbox('Escoge la sección', ['¿La fuente es sustentable?', 'Distribucion de marcas y modelos', 'Distribución de condados'])
     if opcion == "¿La fuente es sustentable?":
-        @st.cache_data
         def compute_sunburst():
             fig = px.sunburst(df3, path=['elec', 'clean', 'Make'], color='clean', color_discrete_sequence=px.colors.qualitative.Set1)
             fig.update_layout({
@@ -217,7 +216,7 @@ if selected2 == "KPIs":
             })
             return fig
 
-        @st.cache_data
+        
         def compute_p2():
           fig = px.pie(tf, values='clean', names='name', color_discrete_sequence=px.colors.sequential.Blugrn)
           fig.update_layout({
@@ -244,7 +243,6 @@ if selected2 == "KPIs":
 
 
     if opcion == "Distribucion de marcas y modelos":
-        @st.cache_data
         def compute_Treemap():
             fig = px.treemap(df, path=[px.Constant("Car model proportions"), 'Model Year', 'Make', 'Model'], color='Model', color_discrete_sequence=px.colors.diverging.Portland)
             fig.update_layout({
@@ -256,7 +254,7 @@ if selected2 == "KPIs":
             })
             return fig
 
-        @st.cache_data
+      
         def compute_p1():
           fig = px.pie(top_5_values, values='Make', names='name', color_discrete_sequence=px.colors.sequential.RdBu)
           fig.update_layout({
@@ -280,7 +278,6 @@ if selected2 == "KPIs":
         st.plotly_chart(figr, use_container_width=True)
 
     if opcion == "Distribución de condados":
-        @st.cache_data
         def compute_p3():
           fig = px.pie(top_5, values='County', names='name', color_discrete_sequence=px.colors.sequential.Burgyl)
           fig.update_layout({
