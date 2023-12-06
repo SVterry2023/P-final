@@ -1,11 +1,10 @@
 streamlit
 pandas
 numpy
-plotly
+plotly == 5.5.0
 requests
 folium
 plotly.express
 streamlit-option-menu
 streamlit-folium
-plotly.graph_objects
 Pillow
