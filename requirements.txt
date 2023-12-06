@@ -1,10 +1,10 @@
 streamlit
 pandas
 numpy
-plotly
+plotly==5.3.1
 requests
 folium
-plotly.express
+plotly-express
 streamlit-option-menu
 streamlit-folium
 plotly.graph_objects
