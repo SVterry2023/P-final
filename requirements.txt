@@ -8,4 +8,4 @@ plotly.express
 streamlit-option-menu
 streamlit-folium
 Pillow
-openpyxl==3.0.17
+openpyxl
