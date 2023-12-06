@@ -230,3 +230,7 @@ if selected2 == "KPIs":
             })
             
             return fig
+            
+        fig3 = compute_sunburst()
+        st.plotly_chart(fig3, use_container_width=True)
+
