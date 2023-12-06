@@ -9,6 +9,9 @@ from streamlit_option_menu import option_menu
 from streamlit_folium import folium_static
 import plotly.graph_objects as go
 from PIL import Image
+import subprocess
+subprocess.run(["pip", "install", "plotly==5.3.1"])
+
 
 # Set page config to wide layout
 st.set_page_config(page_title="Población de carros eléctricos en Washington", layout="wide", page_icon="https://cdn-icons-png.flaticon.com/512/1996/1996729.png")
