@@ -119,9 +119,6 @@ tfz = pd.DataFrame(tfrz)
 tfz['name'] = tfz.index
 top_5 = tfz.head(5)
 
-row = []
-new_index = len(df3)
-df3.loc[new_index] = row
 
 if selected2 == "Home":
   heading_text = '<h2 style="color: black;"> La situación actual</h2>'
