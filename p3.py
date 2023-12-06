@@ -205,6 +205,16 @@ if selected2 == "Map":
 if selected2 == "KPIs":
     opcion = st.sidebar.selectbox('Escoge la sección', ['¿La fuente es sustentable?', 'Distribucion de marcas y modelos', 'Distribución de condados'])
     if opcion == "¿La fuente es sustentable?":
+        def compute_sunburst():
+            fig = px.sunburst(df3, path=['elec', 'clean', 'Make'], color='clean', color_discrete_sequence=px.colors.qualitative.Set1)
+            fig.update_layout({
+            'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+            'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+            'margin': dict(l=0, r=0, b=0, t=0, pad=0),
+            'height': 500,  # Adjust the height as needed
+            'width': 800,   # Adjust the width as needed
+            })
+            return fig
 
         
         def compute_p2():
@@ -232,16 +242,7 @@ if selected2 == "KPIs":
 
 
     if opcion == "Distribucion de marcas y modelos":
-        def compute_Treemap():
-            fig = px.treemap(df, path=[px.Constant("Car model proportions"), 'Model Year', 'Make', 'Model'], color='Model', color_discrete_sequence=px.colors.diverging.Portland)
-            fig.update_layout({
-            'plot_bgcolor': 'rgba(0, 0, 0, 0)',
-            'paper_bgcolor': 'rgba(0, 0, 0, 0)',
-            'margin': dict(l=0, r=0, b=0, t=0, pad=0),
-            'height': 500,  # Adjust the height as needed
-            'width': 800,   # Adjust the width as needed
-            })
-            return fig
+
 
       
         def compute_p1():
@@ -256,12 +257,10 @@ if selected2 == "KPIs":
           return fig
 
         figr = compute_p1()
-        fig7 = compute_Treemap()
         heading_text21 = '<h2 style="color: black;"> Distribucion de marcas y modelos </h2>'
         st.markdown(heading_text21, unsafe_allow_html=True)
         heading_text5 = '<h3 style="color: black;"> Treemap</h3>'
         st.markdown(heading_text5, unsafe_allow_html=True)
-        st.plotly_chart(fig7, use_container_width=True)
         heading_text6 = '<h3 style="color: black;"> Marcas </h3>'
         st.markdown(heading_text6, unsafe_allow_html=True)
         st.plotly_chart(figr, use_container_width=True)
