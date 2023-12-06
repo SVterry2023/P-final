@@ -81,7 +81,8 @@ state_data = pd.read_excel(excel_url, engine="openpyxl")
 m = folium.Map(location=[0, 0], zoom_start=1)
 
 #Frecuencias absolutas
-tfa = pd.value_counts(df['clean'])
+tfa = pd.Series(df['clean']).value_counts()
+
 tt= pd.DataFrame(tfa)
 
 #Tabla de frecuencias relativas
@@ -91,7 +92,8 @@ tf = pd.DataFrame(tfr)
 tf['name'] = tf.index
 
 #Frecuencias absolutas
-tfm = pd.value_counts(df['Make'])
+tfm = pd.Series(df['Make']).value_counts()
+
 tm= pd.DataFrame(tfm)
 #Tabla de frecuencias relativas
 tm = df['Make'].shape[0]
@@ -101,7 +103,8 @@ tfm['name'] = tfm.index
 top_5_values = tfm.head(5)
 
 #Frecuencias absolutas
-tfz = pd.value_counts(df['County'])
+tfz = pd.Series(df['County']).value_counts()
+
 tz= pd.DataFrame(tfz)
 #Tabla de frecuencias relativas
 tz = df['County'].shape[0]
