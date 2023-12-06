@@ -1,2 +1,17 @@
 plotly
 pandas
+plotly.express
+numpy
+seaborn
+matplotlib.pyplot
+requests
+folium
+plotly.figure_factory 
+streamlit
+streamlit_option_menu 
+option_menu
+streamlit_folium 
+folium_static
+plotly.graph_objects 
+PIL
+Image
