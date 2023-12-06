@@ -218,7 +218,7 @@ if selected2 == "KPIs":
 
         
         def compute_p2():
-          fig = px.pie(tf, values='clean', names='name', color_discrete_sequence=px.colors.sequential.Blugrn)
+          fig = px.pie(tf, values='count', names='name', color_discrete_sequence=px.colors.sequential.Blugrn)
           fig.update_layout({
           'plot_bgcolor': 'rgba(0, 0, 0, 0)',
           'paper_bgcolor': 'rgba(0, 0, 0, 0)',
