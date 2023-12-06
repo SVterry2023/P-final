@@ -10,8 +10,6 @@ from streamlit_folium import folium_static
 import plotly.graph_objects as go
 from PIL import Image
 import subprocess
-subprocess.run(["pip", "install", "plotly==5.3.1"])
-
 
 
 # Set page config to wide layout
