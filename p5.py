@@ -223,6 +223,6 @@ if selected2 == "KPIs":
                 'width': 800,   # Adjust the width as needed
                 })
             return fig
-
-            fig4 = compute_sunburst()
-            st.plotly_chart(fig4, use_container_width=True)
+              
+        fig4 = compute_sunburst()
+        st.plotly_chart(fig4, use_container_width=True)
