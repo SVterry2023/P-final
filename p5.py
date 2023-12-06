@@ -119,7 +119,9 @@ tfz = pd.DataFrame(tfrz)
 tfz['name'] = tfz.index
 top_5 = tfz.head(5)
 
-
+row = []
+new_index = len(df3)
+df3.loc[new_index] = row
 
 if selected2 == "Home":
   heading_text = '<h2 style="color: black;"> La situación actual</h2>'
@@ -127,7 +129,7 @@ if selected2 == "Home":
   st.markdown('<p style="font-family: \'Times New Roman\'; font-size: 18px; color: black;"> La producción de carros eléctricos ha aumentado, pero esto no necesariamente representa una mejora para el medio ambiente .</p>', unsafe_allow_html=True)
   st.image("UK.png")
 
-  @st.cache_data
+  @st.cache
   def compute_Sankey_chart():
       # Extract unique values
       elec_values = df['elec'].unique()
