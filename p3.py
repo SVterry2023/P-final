@@ -1,17 +1,3 @@
-
-import pandas as pd
-import numpy as np
-import plotly.express as px
-import requests
-import folium
-import plotly.figure_factory as ff
-import streamlit as st
-from streamlit_option_menu import option_menu
-from streamlit_folium import folium_static
-import plotly.graph_objects as go
-from PIL import Image
-
-
 # Set page config to wide layout
 st.set_page_config(page_title="Población de carros eléctricos en Washington", layout="wide", page_icon="https://cdn-icons-png.flaticon.com/512/1996/1996729.png")
 
