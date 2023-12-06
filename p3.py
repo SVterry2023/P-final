@@ -208,12 +208,12 @@ if selected2 == "KPIs":
         def compute_sunburst():
             fig = px.sunburst(df3, path=['elec', 'clean', 'Make'], color='clean', color_discrete_sequence=px.colors.qualitative.Set1)
             fig.update_layout({
-            'plot_bgcolor': 'rgba(0, 0, 0, 0)',
-            'paper_bgcolor': 'rgba(0, 0, 0, 0)',
-            'margin': dict(l=0, r=0, b=0, t=0, pad=0),
-            'height': 500,  # Adjust the height as needed
-            'width': 800,   # Adjust the width as needed
-            })
+                'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+                'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+                'margin': dict(l=0, r=0, b=0, t=0, pad=0),
+                'height': 500,  # Adjust the height as needed
+                'width': 800,   # Adjust the width as needed
+                })
             return fig
 
         
@@ -242,7 +242,17 @@ if selected2 == "KPIs":
 
 
     if opcion == "Distribucion de marcas y modelos":
-
+        
+        def compute_Treemap():
+            fig = px.treemap(df, path=[px.Constant("Car model proportions"), 'Model Year', 'Make', 'Model'], color='Model', color_discrete_sequence=px.colors.diverging.Portland)
+            fig.update_layout({
+                'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+                'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+                'margin': dict(l=0, r=0, b=0, t=0, pad=0),
+                'height': 500,  # Adjust the height as needed
+                'width': 800,   # Adjust the width as needed
+                })
+            return fig
 
       
         def compute_p1():
