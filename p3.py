@@ -11,8 +11,6 @@ import plotly.graph_objects as go
 from PIL import Image
 import subprocess
 subprocess.run(["pip", "install", "plotly==5.3.1"])
-subprocess.run(["pip", "install", "openpyxl==3.0.17"]) 
-
 
 
 
