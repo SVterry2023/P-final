@@ -4,7 +4,7 @@ numpy
 plotly
 requests
 folium
-plotly-express
+plotly.express
 streamlit-option-menu
 streamlit-folium
 plotly.graph_objects
