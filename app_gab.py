@@ -59,7 +59,7 @@ selected2
 
 # Load data and perform preprocessing
 #mapa
-df = pd.read_csv('Electric_Vehicle_Population_Data.csv')
+df = pd.read_excel('Electric_Vehicle_Population_Data.xlsx')
 fips_df = pd.read_csv('FIP.csv')
 
 df = df.dropna()
