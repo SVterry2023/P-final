@@ -72,7 +72,8 @@ df['Count'] = df['County'].map(county_counts)
 df3 = pd.merge(df,fips_df, on='County')
 
 state_geo = requests.get("https://raw.githubusercontent.com/python-visualization/folium/master/tests/us-counties.json").json()
-state_data = pd.read_csv('df3.csv')
+excel_url = "https://github.com/SVterry2023/al/raw/main/df3.xlsx"
+state_data = pd.read_excel(excel_url, engine="openpyxl")
 
 m = folium.Map(location=[0, 0], zoom_start=1)
 
