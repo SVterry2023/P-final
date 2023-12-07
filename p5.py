@@ -211,25 +211,16 @@ if selected2 == "KPIs":
     opcion = st.sidebar.selectbox('Escoge la sección', ['¿La fuente es sustentable?', 'Distribucion de marcas y modelos', 'Distribución de condados'])
     if opcion == "¿La fuente es sustentable?":
         def compute_sunburst():
-            fig = go.Figure()
-            df_all_trees = pd.DataFrame()
-            
-            for elec_value in df3['elec'].unique():
-                filtered_df = df3[df3['elec'] == elec_value]
-                sunburst_fig = px.sunburst(filtered_df, path=['elec', 'clean', 'Make'], color='clean', color_discrete_sequence=px.colors.qualitative.Set1)
-                df_tree = pd.DataFrame(sunburst_fig.data[0].data)
-                df_all_trees = df_all_trees.append(df_tree, ignore_index=True)
-                
+            fig = px.sunburst(df3, path=['elec', 'clean', 'Make'], color='clean', color_discrete_sequence=px.colors.qualitative.Set1)
             fig.update_layout({
-                'plot_bgcolor': 'rgba(0, 0, 0, 0)',
-                'paper_bgcolor': 'rgba(0, 0, 0, 0)',
-                'margin': dict(l=0, r=0, b=0, t=0, pad=0),
-                'height': 500,  # Adjust the height as needed
-                'width': 800,   # Adjust the width as needed
+            'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+            'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+            'margin': dict(l=0, r=0, b=0, t=0, pad=0),
+            'height': 500,  # Adjust the height as needed
+            'width': 800,   # Adjust the width as needed
             })
-            
             return fig
             
-        fig3 = compute_sunburst()
-        st.plotly_chart(fig3, use_container_width=True)
+            fig3 = compute_sunburst()
+            st.plotly_chart(fig3, use_container_width=True)
 
